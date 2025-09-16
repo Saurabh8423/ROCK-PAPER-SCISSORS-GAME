@@ -236,11 +236,12 @@ body {
 
 /* Bottom Buttons */
 .bottom-buttons {
-  position: absolute;
-  bottom: 15px;
-  right: 15px;
+  position: fixed;
+  bottom: 20px;
+  right: 50px;
   display: flex;
   gap: 15px;
+  z-index: 800;
 }
 
 .rules-btn,
@@ -258,7 +259,7 @@ body {
 
 /* Rules Box */
 .rules-box {
-  width: 250px;
+  width: 280px;
   background: #004429;
   border: 5px solid #ffffff;
   border-radius: 12px;
@@ -267,7 +268,10 @@ body {
   font-size: 14px;
   line-height: 1.2;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-  position: relative;
+  position: fixed;
+  bottom: 70px;
+  right: 100px;
+  
 }
 
 .rules-header {
@@ -278,19 +282,23 @@ body {
 }
 
 .close-btn {
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   background: #FF0000;
-  border: 2px solid #ffffff;
+  border: 3px solid #ffffff;
   border-radius: 50%;
   color: #FFFFFF;
-  font-size: large;
+  font-size: 25px;
   font-weight: bold;
   cursor: pointer;
-  line-height: 1;
+  /* line-height: 1; */
   display: flex;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  z-index: 10;
   transition: transform 0.2s ease;
 }
 
@@ -362,4 +370,182 @@ body {
   margin-bottom: 40px;
   letter-spacing: 2px;
   font-weight: bolder;
+}
+
+
+
+/*  Mobile Responsive Fix */
+
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+    align-items: flex-start;
+  }
+
+  .header {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    padding: 15px;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .scores {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .score-box {
+    width: 100px;
+    height: 80px;
+  }
+
+  .score-value {
+    font-size: 32px;
+  }
+
+  .game-rules {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .game-screen {
+    width: 280px;
+    height: 240px;
+  }
+
+  .choice {
+    width: 80px;
+    height: 80px;
+    border-width: 8px;
+  }
+
+  .choice i {
+    font-size: 28px;
+  }
+
+  .result-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .pick-box {
+    width: 90px;
+    height: 90px;
+    border-width: 8px;
+  }
+
+  .result-message {
+    font-size: 20px;
+    width: auto;
+  }
+
+  .end-screen {
+    min-height: auto;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .end-screen h2 {
+    font-size: 28px;
+  }
+
+  .end-screen p {
+    font-size: 16px;
+  }
+
+  .bottom-buttons {
+    position: static;
+    margin-top: 20px;
+    justify-content: center;
+  }
+
+  .rules-btn,
+  .next-btn {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+
+  .rules-box {
+    width: 90%;
+    max-width: 320px;
+    bottom: 70px;
+    right: 50%;
+    transform: translateX(50%); 
+    font-size: 13px;
+    padding: 15px;
+  }
+
+  #hurrayScreen h2 {
+    font-size: 2.5rem;
+  }
+
+  #hurrayScreen .emoji span {
+    font-size: 2rem;
+  }
+
+  #hurrayScreen .emoji span.cup {
+    font-size: 6rem;
+  }
+
+  #hurrayScreen p {
+    font-size: 1.2rem;
+  }
+}
+
+
+/*  Tablet & Small Desktop */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .header {
+    padding: 15px 20px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .score-box {
+    width: 110px;
+    height: 90px;
+  }
+
+  .score-value {
+    font-size: 38px;
+  }
+
+  .game-screen {
+    width: 300px;
+    height: 260px;
+  }
+
+  .rules-box {
+    width: 320px;
+    bottom: 70px;
+    right: 50px;
+  }
+
+  .choice {
+    width: 95px;
+    height: 95px;
+  }
+
+  .choice i {
+    font-size: 34px;
+  }
+
+  .result-message {
+    font-size: 22px;
+  }
+
+  #hurrayScreen h2 {
+    font-size: 3.5rem;
+  }
+
+  #hurrayScreen .emoji span.cup {
+    font-size: 8rem;
+  }
 }
