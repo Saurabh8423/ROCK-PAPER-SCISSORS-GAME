@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- Header with Score -->
+      <div class="header">
+        <div class="title">
+          <div>ROCK</div>
+          <div>PAPER</div>
+          <div>SCISSORS</div>
+        </div>
+        <div class="scores">
+          <div class="score-box">
+            <div class="score-label">COMPUTER<br />SCORE</div>
+            <div id="computerScore" class="score-value">0</div>
+          </div>
+          <div class="score-box">
+            <div class="score-label">YOUR<br />SCORE</div>
+            <div id="playerScore" class="score-value">0</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GAME + RULES SECTION -->
+      <div class="game-rules">
+        <!-- GAME SCREEN -->
+        <div id="gameScreen" class="game-screen">
+          <svg class="triangle" fill="none" viewBox="0 0 350 300">
+            <line
+              x1="80"
+              y1="150"
+              x2="270"
+              y2="150"
+              stroke="#000"
+              stroke-width="8"
+              stroke-linecap="round"
+            />
+            <line
+              x1="80"
+              y1="150"
+              x2="175"
+              y2="260"
+              stroke="#000"
+              stroke-width="8"
+              stroke-linecap="round"
+            />
+            <line
+              x1="270"
+              y1="150"
+              x2="175"
+              y2="260"
+              stroke="#000"
+              stroke-width="8"
+              stroke-linecap="round"
+            />
+          </svg>
+
+          <!-- ROCK -->
+          <div class="choice rock" data-choice="rock">
+            <i class="fas fa-hand-fist"></i>
+          </div>
+
+          <!-- SCISSORS -->
+          <div class="choice scissors" data-choice="scissors">
+            <i class="fas fa-hand-scissors"></i>
+          </div>
+
+          <!-- PAPER -->
+          <div class="choice paper" data-choice="paper">
+            <i class="fas fa-hand"></i>
+          </div>
+        </div>
+
+        <!-- RESULT SCREEN -->
+        <div id="resultScreen" class="result-screen hidden">
+          <div class="result-row">
+            <div class="pick">
+              <h3>YOU PICKED</h3>
+              <div id="playerPick" class="pick-box"></div>
+            </div>
+
+            <h2 id="resultMessage" class="result-message"></h2>
+
+            <div class="pick">
+              <h3>PC PICKED</h3>
+              <div id="computerPick" class="pick-box"></div>
+            </div>
+          </div>
+          <button id="playAgain" class="btn">PLAY AGAIN</button>
+        </div>
+
+        <!-- HURRAY SCREEN -->
+        <div id="hurrayScreen" class="end-screen hidden">
+          <div class="emoji">
+            <span>✨</span>
+            <span>✨</span>
+            <span class="cup">🏆</span>
+            <span>✨</span>
+            <span>✨</span>
+          </div>
+          <h2>HURRAY!!</h2>
+          <p>YOU WON THE GAME</p>
+          <button class="btn restartGame">PLAY AGAIN</button>
+        </div>
+
+        <!-- LOST SCREEN -->
+        <div id="lostScreen" class="end-screen hidden">
+          <h2>YOU LOST!</h2>
+          <button class="btn restartGame">TRY AGAIN</button>
+        </div>
+
+        <!-- TIE SCREEN -->
+        <div id="tieScreen" class="end-screen hidden">
+          <h2>IT'S A TIE!</h2>
+          <button class="btn restartGame">PLAY AGAIN</button>
+        </div>
+
+        <!-- Bottom Right Buttons -->
+        <div class="bottom-buttons">
+          <button id="rulesButton" class="rules-btn">RULES</button>
+          <button id="nextButton" class="next-btn hidden">NEXT</button>
+        </div>
+
+        <!-- RULES BOX -->
+        <div id="rulesBox" class="rules-box hidden">
+          <div class="rules-header">
+            <h2>Game Rules</h2>
+            <button id="closeRules" class="close-btn">✕</button>
+          </div>
+          <ul>
+            <li>
+              <span class="dot"></span> Rock beats scissors, scissors beat
+              paper, and paper beats rock.
+            </li>
+            <li>
+              <span class="dot"></span> Agree ahead of time whether you'll count off "rock, paper, scissors, shoot" or just "rock, paper,scissors."
+            </li>
+            <li>
+              <span class="dot"></span> Use rock, paper, scissors to settle minor decisions or simply play to pass the time.
+            </li>
+            <li>
+              <span class="dot"></span> If both players lay down the same hand, each player lays down another hand.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- JS -->
+    <script src="./script.js"></script>
+  </body>
+</html>
